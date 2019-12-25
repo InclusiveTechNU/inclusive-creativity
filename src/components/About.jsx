@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import dimensions from "styles/dimensions";
 import { RichText } from "prismic-reactjs";
 import PropTypes from "prop-types";
+import colors from "styles/colors";
 
 const AboutContainer = styled("div")`
     padding-top: 1em;
@@ -58,7 +59,19 @@ const AboutLink = styled("a")`
 
 const AboutBio = styled("div")`
     padding-bottom: 3em;
-
+    
+    ul {
+      li {
+        margin-bottom: 9px;
+        line-height: 27px;
+      }
+    }
+    
+    p {
+      a {
+        color: ${colors.primary_link};
+      }
+    }
 
     @media(max-width: ${dimensions.maxwidthMobile}px) {
         grid-row: 2;
