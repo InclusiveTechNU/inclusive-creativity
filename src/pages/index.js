@@ -10,12 +10,26 @@ import Button from "components/_ui/Button";
 import About from "components/About";
 import Layout from "components/Layout";
 import ProjectCard from "components/ProjectCard";
+import teachingBackgroundImage from "images/teaching.svg";
 
 const Hero = styled("div")`
     padding-top: 2.5em;
     padding-bottom: 3em;
     margin-bottom: 6em;
-    max-width: 830px;
+    
+    .contentwrapper {
+      height: 395px;
+      h1 {
+        float: left;
+        max-width: calc(100% - 490px);
+      }
+      
+      .contentprod {
+        float: right;
+        width: 490px;
+        margin-top: -30px;
+      }
+    }
 
     @media(max-width:${dimensions.maxwidthMobile}px) {
        margin-bottom: 3em;
@@ -131,7 +145,12 @@ const RenderBody = ({ home, projects, meta }) => (
         />
         <Hero>
             <>
-                {RichText.render(home.hero_title)}
+                <div className="contentwrapper">
+                  {RichText.render(home.hero_title)}
+                  <div className="contentprod">
+                    <img src={teachingBackgroundImage} />
+                  </div>
+                </div>
             </>
             <a href={home.hero_button_link.url}
                target="_blank" rel="noopener noreferrer">
