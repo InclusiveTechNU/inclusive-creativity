@@ -49,6 +49,7 @@ const AboutLink = styled("a")`
     }
 
     &:hover {
+        color: ${colors.primary_link};
         span {
             transform: translateX(0px);
             opacity: 1;
