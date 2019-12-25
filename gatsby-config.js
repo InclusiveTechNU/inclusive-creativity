@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/contentproduction.northwestern.edu",
   siteMetadata: {
     title: `Accessible Content Production Tools`,
         description: `Next Generation Content Production Tools for People with Vision Impairments.`,
