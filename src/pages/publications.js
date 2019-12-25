@@ -31,7 +31,7 @@ const Blog = ({ posts, meta }) => (
     <>
         <Helmet
             title={`Publications | A11Y Content Production`}
-            titleTemplate={`%s | Blog | Prist, Gatsby & Prismic Starter`}
+            titleTemplate={`%s`}
             meta={[
                 {
                     name: `description`,
