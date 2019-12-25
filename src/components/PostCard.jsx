@@ -101,8 +101,8 @@ const PostCardAction = styled("div")`
     }
 `
 
-const PostCard = ({ author, category, date, title, description, uid}) => (
-    <PostCardContainer className="BlogPostCard" to={`/publications/${uid}`}>
+const PostCard = ({ url, author, category, date, title, description, uid}) => (
+    <PostCardContainer className="BlogPostCard" to={`/${url}/${uid}`}>
         <PostCategory>
             {category[0].text}
         </PostCategory>
@@ -133,6 +133,7 @@ const PostCard = ({ author, category, date, title, description, uid}) => (
 export default PostCard;
 
 PostCard.propTypes = {
+    url: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
     category: PropTypes.array.isRequired,
     date: PropTypes.string.isRequired,

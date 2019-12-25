@@ -30,7 +30,7 @@ const BlogGrid = styled("div")`
 const Blog = ({ posts, meta }) => (
     <>
         <Helmet
-            title={`Publications | A11Y Content Production`}
+            title={`Tools | A11Y Content Production`}
             titleTemplate={`%s`}
             meta={[
                 {
@@ -69,12 +69,12 @@ const Blog = ({ posts, meta }) => (
         />
         <Layout>
             <BlogTitle>
-                Publications
+                Tools
             </BlogTitle>
             <BlogGrid>
                 {posts.map((post, i) => (
                     <PostCard
-                        url="publications"
+                        url="tools"
                         key={i}
                         author={post.node.post_author}
                         category={post.node.post_category}
@@ -90,7 +90,7 @@ const Blog = ({ posts, meta }) => (
 );
 
 export default ({ data }) => {
-    const posts = data.prismic.allPosts.edges;
+    const posts = data.prismic.allTools.edges;
     const meta = data.site.siteMetadata;
     if (!posts) return null;
 
@@ -108,7 +108,7 @@ Blog.propTypes = {
 export const query = graphql`
     {
         prismic {
-            allPosts(sortBy: post_date_DESC) {
+            allTools(sortBy: post_date_DESC) {
                 edges {
                     node {
                         post_title

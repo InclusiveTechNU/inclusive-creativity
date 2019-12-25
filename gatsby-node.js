@@ -32,6 +32,24 @@ exports.createPages = async ({ graphql, actions }) => {
                         }
                     }
                 }
+                allTools {
+                    edges {
+                        node {
+                            post_title
+                            post_hero_image
+                            post_hero_annotation
+                            post_date
+                            post_type
+                            post_category
+                            post_body
+                            post_preview_description
+                            post_author
+                            _meta {
+                                uid
+                            }
+                        }
+                    }
+                }
                 allPosts {
                     edges {
                         node {
@@ -39,6 +57,7 @@ exports.createPages = async ({ graphql, actions }) => {
                             post_hero_image
                             post_hero_annotation
                             post_date
+                            post_type
                             post_category
                             post_body
                             post_preview_description
@@ -56,9 +75,11 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const projectsList = result.data.prismic.allProjects.edges;
     const postsList = result.data.prismic.allPosts.edges;
+    const toolsList = result.data.prismic.allTools.edges;
 
     const projectTemplate = require.resolve('./src/templates/project.jsx');
     const postTemplate = require.resolve('./src/templates/post.jsx');
+    const toolTemplate = require.resolve('./src/templates/tool.jsx');
 
     projectsList.forEach(edge => {
         // The uid you assigned in Prismic is the slug!
@@ -69,6 +90,18 @@ exports.createPages = async ({ graphql, actions }) => {
             component: projectTemplate,
             context: {
                 // Pass the unique ID (uid) through context so the template can filter by it
+                uid: edge.node._meta.uid,
+            },
+        })
+    })
+    
+    toolsList.forEach(edge => {
+        createPage({
+            type: 'Project',
+            match: '/tools/:uid',
+            path: `/tools/${edge.node._meta.uid}`,
+            component: toolTemplate,
+            context: {
                 uid: edge.node._meta.uid,
             },
         })
