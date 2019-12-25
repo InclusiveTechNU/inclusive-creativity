@@ -9,6 +9,7 @@ import dimensions from "styles/dimensions";
 import Footer from "components/Footer";
 import Header from "components/Header";
 import 'styles/fonts.scss';
+import backgroundImageHeader from "images/background.svg";
 
 const LayoutContainer = styled.div`
     max-width: ${dimensions.maxwidthDesktop}px;
@@ -43,6 +44,12 @@ const Layout = ({ children }) => (
             }
         `}
         render={data => (
+          <div style={{
+            backgroundImage: `url(${backgroundImageHeader})`,
+            backgroundSize: "50%",
+            backgroundPosition: "right top",
+            backgroundRepeat: "no-repeat"
+          }}>
             <LayoutContainer className="div">
                 <Global styles={[globalStyles, typeStyles]} />
                 <div className="Layout">
@@ -53,6 +60,7 @@ const Layout = ({ children }) => (
                     <Footer />
                 </div>
             </LayoutContainer>
+          </div>
         )}
     />
 )
