@@ -11,6 +11,7 @@ const PostCardContainer = styled(Link)`
     padding: 3em 2.5em 2.25em 2.5em;
     border-radius: 3px;
     text-decoration: none;
+    background: white;
     color: currentColor;
     display: flex;
     flex-direction: column;
@@ -86,7 +87,7 @@ const PostCardAction = styled("div")`
 `
 
 const PostCard = ({ author, category, date, title, description, uid}) => (
-    <PostCardContainer className="BlogPostCard" to={`/blog/${uid}`}>
+    <PostCardContainer className="BlogPostCard" to={`/publications/${uid}`}>
         <PostCategory>
             {category[0].text}
         </PostCategory>
