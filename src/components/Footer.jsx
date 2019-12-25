@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import styled from "@emotion/styled";
 import colors from "styles/colors";
 import Logo from "components/_ui/Logo";
-import spooch from "images/oscar-icon.png"
+import spooch from "images/nu-hci-logo.svg"
 
 const FooterContainer = styled("div")`
     padding-top: 3.75em;
@@ -28,30 +28,18 @@ const FooterAuthor = styled("a")`
 
      &:hover {
          color: ${colors.blue900};
-
-        .FooterSpooch {
-            animation-name: rotate;
-            animation-duration: 1.5s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
-        }
-    }
-
-    @keyframes rotate {
-        from {transform: rotate(0deg);}
-        to {transform: rotate(360deg);}
     }
 `
 
 const FooterSpooch = styled("img")`
-    max-width: 33px;
-    margin-top: 0.25em;
+    max-width: 130px;
+    margin-top: 1.25em;
 `
 
 const Footer = () => (
     <FooterContainer>
-        <FooterAuthor href="https://marguerite.io">
-            © {(new Date()).getFullYear().toString()} — Northwestern HCI
+        <FooterAuthor href="https://hci.northwestern.edu">
+            © {(new Date()).getFullYear().toString()} — Northwestern Accessible Content Production Tools Group 
             <FooterSpooch className="FooterSpooch" src={spooch} />
         </FooterAuthor>
     </FooterContainer>
