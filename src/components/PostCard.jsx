@@ -10,8 +10,10 @@ const PostCardContainer = styled(Link)`
     border: 1px solid ${colors.grey200};
     padding: 3em 2.5em 2.25em 2.5em;
     border-radius: 3px;
+    position: relative;
     text-decoration: none;
     background: white;
+    height: 450px;
     color: currentColor;
     display: flex;
     flex-direction: column;
@@ -24,7 +26,7 @@ const PostCardContainer = styled(Link)`
         cursor: pointer;
 
         .PostCardAction {
-            color: ${colors.blue500};
+            color: ${colors.primary_link};
             transition: all 150ms ease-in-out;
 
             span {
@@ -44,12 +46,17 @@ const PostCategory = styled("h6")`
 const PostTitle = styled("h3")`
     margin: 0;
     margin-top: 0.5em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 1.2em;
 `
 
 const PostMetas = styled("div")`
     display: flex;
     align-items: center;
-    margin-top: 1.5em;
+    margin-top: .7em;
     justify-content: space-between;
     font-size: 0.85em;
     color: ${colors.grey600};
@@ -64,8 +71,16 @@ const PostDate = styled("div")`
 `
 
 const PostDescription = styled("div")`
-    margin-top: 2em;
-    margin-bottom: 4em;
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+    
+    p {
+      font-size: .9em;
+      display: -webkit-box;
+      -webkit-line-clamp: 8;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
 
     p:last-of-type {
         margin: 0;
@@ -97,17 +112,21 @@ const PostCard = ({ author, category, date, title, description, uid}) => (
         <PostDescription>
             {RichText.render(description)}
         </PostDescription>
-        <PostCardAction className="PostCardAction">
-            Read more <span>&#8594;</span>
-        </PostCardAction>
-        <PostMetas>
-            <PostAuthor>
-                {author}
-            </PostAuthor>
-            <PostDate>
-                <Moment format="MMMM D, YYYY">{date}</Moment>
-            </PostDate>
-        </PostMetas>
+        <div style={{position: "absolute", 
+                     bottom: "20px",
+                     width: "calc(100% - 5em)"}}>
+          <PostCardAction className="PostCardAction">
+              Read more <span>&#8594;</span>
+          </PostCardAction>
+          <PostMetas>
+              <PostAuthor>
+                  {author}
+              </PostAuthor>
+              <PostDate>
+                  <Moment format="MMMM D, YYYY">{date}</Moment>
+              </PostDate>
+          </PostMetas>
+        </div>
     </PostCardContainer>
 )
 
