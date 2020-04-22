@@ -40,7 +40,7 @@ const Footer = () => (
     <FooterContainer>
         <FooterAuthor href="https://hci.northwestern.edu">
             © {(new Date()).getFullYear().toString()} — Northwestern Accessible Content Production Tools Group 
-            <FooterSpooch className="FooterSpooch" src={spooch} />
+            <FooterSpooch className="FooterSpooch" src={spooch} alt="Northwestern HCI Logo" />
         </FooterAuthor>
     </FooterContainer>
 )

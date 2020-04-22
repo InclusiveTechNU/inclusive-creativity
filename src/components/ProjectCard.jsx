@@ -155,7 +155,7 @@ const ProjectCardImageContainer = styled("div")`
 `
 
 const ProjectCard = ({ category, title, description, thumbnail, uid, color, secondaryColor}) => (
-    <ProjectCardContainer secondaryColor={secondaryColor} to={`/work/${uid}`}>
+    <ProjectCardContainer secondaryColor={secondaryColor} to={`/publications`}>
         <ProjectCardContent secondaryColor={secondaryColor} className="ProjectCardContent">
             <ProjectCardCategory>
                 {category[0].text}

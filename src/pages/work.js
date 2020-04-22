@@ -50,6 +50,7 @@ const Work = ({ projects, meta }) => (
                 },
             ].concat(meta)}
         />
+        <html lang="en" />
         <Layout>
             <WorkTitle>
                 Projects

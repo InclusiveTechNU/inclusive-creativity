@@ -143,12 +143,13 @@ const RenderBody = ({ home, projects, meta }) => (
                 },
             ].concat(meta)}
         />
+        <html lang="en" />
         <Hero>
             <>
                 <div className="contentwrapper">
                   {RichText.render(home.hero_title)}
                   <div className="contentprod">
-                    <img src={teachingBackgroundImage} />
+                    <img src={teachingBackgroundImage} alt="Two people working on designing a application" />
                   </div>
                 </div>
             </>

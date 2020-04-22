@@ -133,6 +133,7 @@ const Post = ({ post, meta }) => {
                     },
                 ].concat(meta)}
             />
+            <html lang="en" />
             <Layout>
                 <PostCategory>
                     {RichText.render(post.post_category)}
