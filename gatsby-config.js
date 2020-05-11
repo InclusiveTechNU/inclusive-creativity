@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/inclusive-creativity.soc.northwestern.edu",
+  pathPrefix: "/",
   siteMetadata: {
     title: `Northwestern University`,
     description: `Next Generation Content Production Tools for People with Vision Impairments.`,
