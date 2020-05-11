@@ -12,6 +12,15 @@ const globalStyles = css`
         min-height: 100%;
     }
 
+    @media(max-width: 776px) {
+        .logo-link {
+            display: block;
+            margin: 0 auto;
+            padding: 0;
+            width: fit-content;
+        }
+    }
+
     body {
         width: 100%;
         margin: 0 auto;

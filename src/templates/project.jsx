@@ -91,7 +91,6 @@ const Project = ({ project, meta }) => {
                     },
                 ].concat(meta)}
             />
-            <html lang="en" />
             <Layout>
                 <ProjectTitle>
                     {RichText.render(project.project_title)}

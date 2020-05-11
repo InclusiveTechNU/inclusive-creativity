@@ -67,7 +67,6 @@ const Blog = ({ posts, meta }) => (
                 },
             ].concat(meta)}
         />
-        <html lang="en" />
         <Layout>
             <BlogTitle>
                 Publications

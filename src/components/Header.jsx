@@ -6,14 +6,20 @@ import dimensions from "styles/dimensions";
 import Logo from "components/_ui/Logo";
 
 const HeaderContainer = styled("div")`
-    padding-top: 3.75em;
+    padding-top: 79px;
     padding-bottom: 3em;
+    @media(max-width: 776px) {
+        padding-top: 50px;
+    }
 `
 
 const HeaderContent = styled("div")`
     display: flex;
     margin-top: -17px;
     justify-content: space-between;
+    @media(max-width: 776px) {
+        display: block
+    }
 `
 
 const HeaderLinks = styled("div")`
@@ -26,12 +32,9 @@ const HeaderLinks = styled("div")`
     max-width: 341px;
     height: 38px;
 
-    @media(max-width: ${dimensions.maxwidthTablet}px) {
-        grid-gap: 5.5em;
-    }
-
-    @media(max-width: ${dimensions.maxwidthMobile}px) {
-        grid-gap: 2.5em;
+    @media(max-width: 776px) {
+        width: 100%;
+        margin: 5px auto;
     }
 
     a {
@@ -39,11 +42,15 @@ const HeaderLinks = styled("div")`
         text-decoration: none;
         border-bottom: 3px solid transparent;
         font-weight: 600;
-        font-size: 0.95em;
         padding-bottom: 0.1em;
         padding-top: 0.25em;
         display: block;
         position: relative;
+
+        @media(max-width: 600px) {
+            font-size: 16px !important;
+        }
+    
 
         &:after {
             position: absolute;
@@ -77,7 +84,9 @@ const HeaderLinks = styled("div")`
 const Header = () => (
     <HeaderContainer>
         <HeaderContent>
-            <Link to="/">
+            <Link className="logo-link" to="/" style={{
+                marginTop: "-15px"
+            }}>
                 <Logo/>
             </Link>
             <HeaderLinks>

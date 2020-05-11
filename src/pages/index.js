@@ -13,7 +13,6 @@ import ProjectCard from "components/ProjectCard";
 import teachingBackgroundImage from "images/teaching.svg";
 
 const Hero = styled("div")`
-    padding-top: 2.5em;
     padding-bottom: 3em;
     margin-bottom: 6em;
     
@@ -42,17 +41,17 @@ const Hero = styled("div")`
             text-decoration: none;
             transition: all 100ms ease-in-out;
 
-            &:nth-of-type(1) { color: ${colors.logo_gradient_first}; }
-            &:nth-of-type(2) { color: ${colors.logo_gradient_second}; }
-            &:nth-of-type(3) { color: ${colors.logo_gradient_third}; }
+            &:nth-of-type(1) { color: #721F80; }
+            &:nth-of-type(2) { color: #5B479D; }
+            &:nth-of-type(3) { color: #4163A7; }
 
             &:hover {
                 cursor: pointer;
                 transition: all 100ms ease-in-out;
 
-                &:nth-of-type(1) { color: ${colors.logo_gradient_first_dark};    background-color: ${colors.logo_gradient_first_light};}
-                &:nth-of-type(2) { color: ${colors.logo_gradient_second_dark};  background-color: ${colors.logo_gradient_second_light};}
-                &:nth-of-type(3) { color: ${colors.logo_gradient_third_dark};  background-color: ${colors.logo_gradient_third_light};}
+                &:nth-of-type(1) { color: #44134D;    background-color: ${colors.logo_gradient_first_light};}
+                &:nth-of-type(2) { color: #223257;  background-color: #9E91CD;}
+                &:nth-of-type(3) { color: #223257;  background-color: #8CA5D2;}
 
             }
         }
