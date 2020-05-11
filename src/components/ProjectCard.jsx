@@ -172,8 +172,8 @@ const ProjectCard = ({ category, title, description, thumbnail, uid, color, seco
                 Details <span>&#8594;</span>
             </ProjectCardAction>
         </ProjectCardContent>
-        <ProjectCardImageContainer secondaryColor={secondaryColor} style={{background: color}} className="ProjectCardImageContainer">
-            <img src={thumbnail.url} alt={title[0].text}/>
+        <ProjectCardImageContainer aria-hidden="true" secondaryColor={secondaryColor} style={{background: color}} className="ProjectCardImageContainer">
+            <img src={thumbnail.url} alt="" role="presentation"/>
         </ProjectCardImageContainer>
     </ProjectCardContainer>
 )

@@ -170,7 +170,7 @@ const PersonCardImageContainer = styled("div")`
 const PersonCard = ({ link, name, title, image, bio}) => (
     <PersonCardContainer href={link} target="_blank">
         <PersonCardImageContainer className="PersonCardImageContainer">
-            <img src={image.url} role="presentation"/>
+            <img src={image.url} alt="" role="presentation"/>
         </PersonCardImageContainer>
         <PersonCardContent className="PersonCardContent">
             <PersonCardTitle>

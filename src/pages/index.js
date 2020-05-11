@@ -29,8 +29,16 @@ const Hero = styled("div")`
       }
     }
 
+    position: relative;
+
+    .learn-more {
+        position: absolute;
+        left: 0;
+    }
+
     @media(max-width: 1308px) {
         .learn-more {
+            position: relative;
             margin: 0 AUTO;
             DISPLAY: BLOCK;
             float: none;
@@ -181,7 +189,7 @@ const RenderBody = ({ home, projects, meta }) => (
                 <div className="contentwrapper">
                   {RichText.render(home.hero_title)}
                   <div className="contentprod">
-                    <img src={teachingBackgroundImage} alt="Two people working on designing a application" />
+                    <img src={teachingBackgroundImage} alt="" role="presentation" />
                   </div>
                 </div>
             </>
