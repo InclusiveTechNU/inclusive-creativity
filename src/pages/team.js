@@ -86,12 +86,22 @@ export default ({ data }) => {
             return -1;
         } else if (bTitle.indexOf("Principal Investigator") === 0) {
             return 1;
-        } else if (aTitle.indexOf("Principal Investigator") !== -1) {
+        } else if (aTitle.indexOf("Principal Investigator") !== -1 &&
+                   bTitle.indexOf("Principal Investigator") === -1) {
             return -1;
-        } else if (bTitle.indexOf("Principal Investigator") !== -1) {
+        } else if (bTitle.indexOf("Principal Investigator") !== -1 &&
+                   aTitle.indexOf("Principal Investigator") === -1) {
             return 1;
+        } else if (aTitle.indexOf("Principal Investigator") !== -1 &&
+                   bTitle.indexOf("Principal Investigator") !== -1) { 
+            return a.node.name[0].text - b.node.name[0].text;
+        } else if (aTitle.indexOf("Ph.D.") !== -1 && bTitle.indexOf("Ph.D.") === -1) {
+            return -1;
+        } else if (bTitle.indexOf("Ph.D.") !== -1 && aTitle.indexOf("Ph.D.") === -1) {
+            return 1;
+        } else {
+            return a.node.name[0].text - b.node.name[0].text;
         }
-        return 0;
     });
     return (
         <Work persons={persons} meta={meta}/>
