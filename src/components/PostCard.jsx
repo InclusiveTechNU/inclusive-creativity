@@ -38,8 +38,11 @@ const PostCardContainer = styled('a')`
 `
 
 const PostCategory = styled("h6")`
-    font-weight: 600;
-    color: ${colors.grey600};
+    font-weight: 400;
+    color: #4c4c4c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 13px;
 `
 
 const PostTitle = styled("h3")`
@@ -58,7 +61,8 @@ const PostMetas = styled("div")`
     margin-top: .7em;
     justify-content: space-between;
     font-size: 0.85em;
-    color: ${colors.grey600};
+    color: #585858;
+    font-weight: 300;
 `
 
 const PostAuthor = styled("div")`

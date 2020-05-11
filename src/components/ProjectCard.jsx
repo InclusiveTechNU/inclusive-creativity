@@ -11,6 +11,7 @@ const ProjectCardContainer = styled(Link)`
     grid-template-columns: 4fr 7fr;
     box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.06);
     margin-bottom: 4em;
+    min-height: 565px;
     transition: all 150ms ease-in-out;
     text-decoration: none;
     color: currentColor;
@@ -106,6 +107,8 @@ const ProjectCardAction = styled("div")`
     text-decoration: none;
     color: currentColor;
     transition: all 150ms ease-in-out;
+    bottom: 45px;
+    position: absolute;
 
     span {
         margin-left: 1em;
