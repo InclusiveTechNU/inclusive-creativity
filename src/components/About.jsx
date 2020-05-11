@@ -79,7 +79,7 @@ const AboutBio = styled("div")`
 
 const About = ({ bio, socialLinks }) => (
     <AboutContainer>
-        <AboutLinkContainer>
+        <AboutLinkContainer aria-label="links">
             {socialLinks.map((social, i) => (
                 <AboutLink
                     key={i}
@@ -90,7 +90,7 @@ const About = ({ bio, socialLinks }) => (
                 </AboutLink>
             ))}
         </AboutLinkContainer>
-        <AboutBio>
+        <AboutBio aria-label="project info">
             {RichText.render(bio)}
         </AboutBio>
     </AboutContainer>

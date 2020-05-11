@@ -82,7 +82,7 @@ const HeaderLinks = styled("div")`
 `
 
 const Header = () => (
-    <HeaderContainer>
+    <HeaderContainer role="navigation">
         <HeaderContent>
             <Link className="logo-link" to="/" style={{
                 marginTop: "-15px"
