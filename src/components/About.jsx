@@ -11,14 +11,9 @@ const AboutContainer = styled("div")`
     grid-template-columns: 15em 1fr;
     grid-gap: 3em;
 
-    @media(max-width: ${dimensions.maxwidthTablet}px) {
-        grid-template-columns: 1fr 3fr 1fr;
-    }
-
-    @media(max-width: ${dimensions.maxwidthMobile}px) {
-        grid-template-columns: 7em 1fr;
-        grid-template-rows: 3em 1fr;
-        grid-gap: 2em;
+    @media(max-width: 960px) {
+        grid-template-columns: none;
+        grid-gap: 0.2em;
     }
 `
 
@@ -27,9 +22,11 @@ const AboutLinkContainer = styled("div")`
     padding-bottom: 3em;
     display: flex;
     flex-direction: column;
+    text-align: left;
 
-    @media(max-width: ${dimensions.maxwidthMobile}px) {
-        grid-row: 2;
+    @media(max-width: 960px) {
+        text-align: center;
+        padding-bottom: 0;
     }
 `
 
@@ -74,8 +71,8 @@ const AboutBio = styled("div")`
       }
     }
 
-    @media(max-width: ${dimensions.maxwidthMobile}px) {
-        grid-row: 2;
+    @media(max-width: 960px) {
+        padding-top: 0;
     }
 `
 

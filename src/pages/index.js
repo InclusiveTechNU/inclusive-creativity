@@ -9,7 +9,6 @@ import dimensions from "styles/dimensions";
 import Button from "components/_ui/Button";
 import About from "components/About";
 import Layout from "components/Layout";
-import ProjectCard from "components/ProjectCard";
 import teachingBackgroundImage from "images/teaching.svg";
 
 const Hero = styled("div")`
