@@ -105,7 +105,7 @@ const WorkAction = styled(Link)`
 const RenderBody = ({ home, projects, meta }) => (
     <>
         <Helmet
-            title={"A11Y Content Production"}
+            title={"Inclusive Creativity"}
             titleTemplate={`%s | ${meta.title}`}
             meta={[
                 {
@@ -142,7 +142,6 @@ const RenderBody = ({ home, projects, meta }) => (
                 },
             ].concat(meta)}
         />
-        <html lang="en" />
         <Hero>
             <>
                 <div className="contentwrapper">

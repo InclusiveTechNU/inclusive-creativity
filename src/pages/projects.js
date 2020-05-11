@@ -13,7 +13,7 @@ const WorkTitle = styled("h1")`
 const Work = ({ projects, meta }) => (
     <>
         <Helmet
-            title={`Projects | A11Y Content Production`}
+            title={`Projects | Inclusive Creativity`}
             titleTemplate={`%s`}
             meta={[
                 {
@@ -22,7 +22,7 @@ const Work = ({ projects, meta }) => (
                 },
                 {
                     property: `og:title`,
-                    content: `Work | Prist, Gatsby & Prismic Starter`,
+                    content: `Projects | Inclusive Creativity`,
                 },
                 {
                     property: `og:description`,

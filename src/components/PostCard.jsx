@@ -16,7 +16,6 @@ const PostCardContainer = styled('a')`
     color: currentColor;
     display: flex;
     flex-direction: column;
-    box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.06);
     transition: all 150ms ease-in-out;
 
     &:hover {
