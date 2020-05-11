@@ -83,6 +83,7 @@ const Blog = ({ posts, meta }) => (
                         date={post.node.post_date}
                         description={post.node.post_preview_description}
                         uid={post.node._meta.uid}
+                        link={post.node.project_link.url}
                     />
                 ))}
             </BlogGrid>
@@ -114,6 +115,11 @@ export const query = graphql`
                     node {
                         post_title
                         post_date
+                        project_link {
+                            ... on PRISMIC__ExternalLink {
+                                url
+                            }
+                        }
                         post_category
                         post_preview_description
                         post_author

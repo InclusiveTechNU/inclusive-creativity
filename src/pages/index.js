@@ -161,23 +161,6 @@ const RenderBody = ({ home, projects, meta }) => (
             </a>
         </Hero>
         <Section>
-            {projects.map((project, i) => (
-                <ProjectCard
-                    key={i}
-                    category={project.node.project_category}
-                    title={project.node.project_title}
-                    description={project.node.project_preview_description}
-                    thumbnail={project.node.project_preview_thumbnail}
-                    uid={project.node._meta.uid}
-                    color={project.node.primary_color}
-                    secondaryColor={project.node.secondary_color}
-                />
-            ))}
-            <WorkAction to={"/work"}>
-                See more projects <span>&#8594;</span>
-            </WorkAction>
-        </Section>
-        <Section>
             {RichText.render(home.about_title)}
             <About
                 bio={home.about_bio}

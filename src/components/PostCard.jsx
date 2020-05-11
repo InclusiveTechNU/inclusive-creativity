@@ -1,12 +1,11 @@
 import React from "react";
 import Moment from 'react-moment';
-import { Link } from "gatsby";
 import { RichText } from "prismic-reactjs";
 import styled from "@emotion/styled";
 import colors from "styles/colors";
 import PropTypes from "prop-types";
 
-const PostCardContainer = styled(Link)`
+const PostCardContainer = styled('a')`
     border: 1px solid ${colors.grey200};
     padding: 3em 2.5em 2.25em 2.5em;
     border-radius: 3px;
@@ -101,8 +100,8 @@ const PostCardAction = styled("div")`
     }
 `
 
-const PostCard = ({ url, author, category, date, title, description, uid}) => (
-    <PostCardContainer className="BlogPostCard" to={`/${url}/${uid}`}>
+const PostCard = ({ url, author, category, date, title, description, uid, link}) => (
+    <PostCardContainer className="BlogPostCard" target="_blank" href={link}>
         <PostCategory>
             {category[0].text}
         </PostCategory>
@@ -134,6 +133,7 @@ export default PostCard;
 
 PostCard.propTypes = {
     url: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
     category: PropTypes.array.isRequired,
     date: PropTypes.string.isRequired,
