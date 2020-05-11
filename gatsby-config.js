@@ -2,8 +2,9 @@ module.exports = {
   pathPrefix: "/contentproduction.northwestern.edu",
   siteMetadata: {
     title: `Northwestern University`,
-        description: `Next Generation Content Production Tools for People with Vision Impairments.`,
+    description: `Next Generation Content Production Tools for People with Vision Impairments.`,
     author: `Northwestern Inclusive Technology Lab, Interactive Audio Lab, and Collab Lab`,
+    lang: 'en',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
