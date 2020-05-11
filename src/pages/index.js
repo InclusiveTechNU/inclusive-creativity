@@ -30,6 +30,41 @@ const Hero = styled("div")`
       }
     }
 
+    @media(max-width: 1308px) {
+        .learn-more {
+            margin: 0 AUTO;
+            DISPLAY: BLOCK;
+            float: none;
+            width: fit-content;
+        }
+
+        .contentwrapper {
+            height: fit-content;
+            padding-bottom: 40px;
+            h1 {
+                margin: 0 auto;
+                display: block;
+                float: none;
+                width: 750px;
+                max-width: 750px;
+                text-align: center;
+            }
+            .contentprod {
+                display: none;
+            }
+
+        }
+    }
+
+    @media(max-width: 850px) {
+        .contentwrapper {
+            h1 {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+
     @media(max-width:${dimensions.maxwidthMobile}px) {
        margin-bottom: 3em;
     }
@@ -152,7 +187,8 @@ const RenderBody = ({ home, projects, meta }) => (
                 </div>
             </>
             <a href={home.hero_button_link.url}
-               target="_blank" rel="noopener noreferrer">
+               target="_blank" rel="noopener noreferrer"
+               className="learn-more">
                 <Button>
                     {RichText.render(home.hero_button_text)}
                 </Button>
