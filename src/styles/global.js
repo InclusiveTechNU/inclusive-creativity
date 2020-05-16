@@ -12,6 +12,10 @@ const globalStyles = css`
         min-height: 100%;
     }
 
+    .bold {
+        font-weight: bold;
+    }
+
     @media(max-width: 776px) {
         .logo-link {
             display: block;

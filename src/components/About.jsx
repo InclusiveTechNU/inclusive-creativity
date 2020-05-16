@@ -91,6 +91,10 @@ const About = ({ bio, socialLinks }) => (
             ))}
         </AboutLinkContainer>
         <AboutBio aria-label="project info">
+            <a href="https://arr.soc.northwestern.edu/" target="_blank">
+                <span className="bold">NEW: </span>
+                Sign up for our Accessibility Research Registry!
+            </a>
             {RichText.render(bio)}
         </AboutBio>
     </AboutContainer>

@@ -8,7 +8,7 @@ import Logo from "components/_ui/Logo";
 const HeaderContainer = styled("div")`
     padding-top: 79px;
     padding-bottom: 3em;
-    @media(max-width: 776px) {
+    @media(max-width: 923px) {
         padding-top: 50px;
     }
 `
@@ -17,7 +17,7 @@ const HeaderContent = styled("div")`
     display: flex;
     margin-top: -17px;
     justify-content: space-between;
-    @media(max-width: 776px) {
+    @media(max-width: 923px) {
         display: block
     }
 `
@@ -25,16 +25,23 @@ const HeaderContent = styled("div")`
 const HeaderLinks = styled("div")`
     display: grid;
     margin-top: 18px;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(5, auto);
     grid-gap: 2.3em;
     justify-content: flex-end;
     width: 100%;
-    max-width: 341px;
+    max-width: 531px;
     height: 38px;
 
-    @media(max-width: 776px) {
+    @media(max-width: 923px) {
         width: 100%;
         margin: 5px auto;
+    }
+
+
+    .registry {
+        @media(max-width: 600px) {
+            width: 124px !important;
+        }
     }
 
     a {
@@ -48,7 +55,7 @@ const HeaderLinks = styled("div")`
         position: relative;
 
         @media(max-width: 600px) {
-            font-size: 16px !important;
+            font-size: 14px !important;
         }
     
 
@@ -110,6 +117,15 @@ const Header = () => (
                     to="/tools">
                     Tools
                 </Link>
+                <a
+                    className="registry"
+                    activeClassName="Link--is-active"
+                    href="https://arr.soc.northwestern.edu/"
+                    style={{
+                        width: "141px"
+                    }}>
+                    Research Registry
+                </a>
             </HeaderLinks>
         </HeaderContent>
     </HeaderContainer>
