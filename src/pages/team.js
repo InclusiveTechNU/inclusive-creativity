@@ -70,6 +70,16 @@ const Work = ({ persons, meta }) => (
                     />
                 ))}
             </PersonsContainer>
+            <WorkTitle>
+                Advisory Board
+            </WorkTitle>
+            <a href="https://smtd.umich.edu/about/faculty-profiles/sile-omodhrain/">Sile O’Modhrain (UMichigan)</a>
+            <br />
+            <br /><a href="http://www.eecs.qmul.ac.uk/profiles/stockmantony.html">Tony Stockman (Queen Mary University)</a>
+            <br />
+            <br /><a href="https://www.microsoft.com/en-us/research/people/merrie/">Meredith Morris (MSR)</a>
+            <br />
+            <br /><a href="https://research.adobe.com/person/gautham-mysore/">Gautham Mysore (Adobe)</a>
         </Layout>
     </>
 );

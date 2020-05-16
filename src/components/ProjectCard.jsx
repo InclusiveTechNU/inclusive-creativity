@@ -6,12 +6,11 @@ import dimensions from "styles/dimensions";
 import colors from "styles/colors";
 import PropTypes from "prop-types";
 
-const ProjectCardContainer = styled(Link)`
+const ProjectCardContainer = styled("div")`
     display: grid;
     grid-template-columns: 4fr 7fr;
     box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.06);
     margin-bottom: 4em;
-    min-height: 565px;
     transition: all 150ms ease-in-out;
     text-decoration: none;
     color: currentColor;
@@ -156,6 +155,11 @@ const ProjectCardImageContainer = styled("div")`
     }
 `
 
+/*
+            <ProjectCardAction className="ProjectCardAction">
+                Details <span>&#8594;</span>
+            </ProjectCardAction>
+*/
 const ProjectCard = ({ category, title, description, thumbnail, uid, color, secondaryColor}) => (
     <ProjectCardContainer secondaryColor={secondaryColor} to={`/publications`}>
         <ProjectCardContent secondaryColor={secondaryColor} className="ProjectCardContent">
@@ -168,9 +172,6 @@ const ProjectCard = ({ category, title, description, thumbnail, uid, color, seco
             <ProjectCardBlurb>
                 {RichText.render(description)}
             </ProjectCardBlurb>
-            <ProjectCardAction className="ProjectCardAction">
-                Details <span>&#8594;</span>
-            </ProjectCardAction>
         </ProjectCardContent>
         <ProjectCardImageContainer aria-hidden="true" secondaryColor={secondaryColor} style={{background: color}} className="ProjectCardImageContainer">
             <img src={thumbnail.url} alt="" role="presentation"/>
