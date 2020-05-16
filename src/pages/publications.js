@@ -82,6 +82,7 @@ const Blog = ({ posts, meta }) => (
                         date={post.node.post_date}
                         description={post.node.post_preview_description}
                         uid={post.node._meta.uid}
+                        acmLink={post.node.acm_link.url}
                         link={post.node.project_link.url}
                     />
                 ))}
@@ -115,6 +116,11 @@ export const query = graphql`
                         post_title
                         post_date
                         post_category
+                        acm_link {
+                            ... on PRISMIC__ExternalLink {
+                                url
+                            }
+                        }
                         project_link {
                             ... on PRISMIC__ExternalLink {
                                 url

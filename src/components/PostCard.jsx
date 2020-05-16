@@ -4,8 +4,9 @@ import { RichText } from "prismic-reactjs";
 import styled from "@emotion/styled";
 import colors from "styles/colors";
 import PropTypes from "prop-types";
+import acmLogo from "images/acm_logo.jpg";
 
-const PostCardContainer = styled('a')`
+const PostCardContainer = styled('div')`
     border: 1px solid ${colors.grey200};
     padding: 3em 2.5em 2.25em 2.5em;
     border-radius: 3px;
@@ -21,18 +22,6 @@ const PostCardContainer = styled('a')`
     &:hover {
         box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.1);
         transition: all 150ms ease-in-out;
-        cursor: pointer;
-
-        .PostCardAction {
-            color: ${colors.primary_link};
-            transition: all 150ms ease-in-out;
-
-            span {
-                transform: translateX(0px);
-                opacity: 1;
-                transition: transform 150ms ease-in-out;
-            }
-        }
     }
 `
 
@@ -89,7 +78,7 @@ const PostDescription = styled("div")`
     }
 `
 
-const PostCardAction = styled("div")`
+const PostCardAction = styled("a")`
     font-weight: 600;
     text-decoration: none;
     color: currentColor;
@@ -101,10 +90,36 @@ const PostCardAction = styled("div")`
         display: inline-block;
         transition: transform 400ms ease-in-out;
     }
+    &:hover {
+        color: ${colors.primary_link};
+            transition: all 150ms ease-in-out;
+
+            span {
+                transform: translateX(0px);
+                opacity: 1;
+                transition: transform 150ms ease-in-out;
+            }
+    }
 `
 
-const PostCard = ({ url, author, category, date, title, description, uid, link}) => (
-    <PostCardContainer className="BlogPostCard" target="_blank" href={link}>
+const ACMLink = styled("a")`
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    filter: grayscale(1);
+    transition: filter .4s;
+
+    &:hover {
+        filter: grayscale(0);
+    }
+    img {
+        height: 40px;
+        width: 40px;
+    }
+`
+
+const PostCard = ({ url, author, category, date, title, description, uid, link, acmLink}) => (
+    <PostCardContainer aria-label={`Publication: ${title[0].text}`} className="BlogPostCard">
         <PostCategory>
             {category[0].text}
         </PostCategory>
@@ -114,11 +129,16 @@ const PostCard = ({ url, author, category, date, title, description, uid, link})
         <PostDescription>
             {RichText.render(description)}
         </PostDescription>
+        {(() => {if (url === "publications") {
+                return <ACMLink href={acmLink}>
+                    <img alt="View Publication on ACM Digital Library" src={acmLogo} />
+                </ACMLink>
+            }})()}
         <div style={{position: "absolute", 
                      bottom: "20px",
                      width: "calc(100% - 5em)"}}>
-          <PostCardAction className="PostCardAction">
-              Read more <span>&#8594;</span>
+          <PostCardAction  target="_blank" href={link} className="PostCardAction">
+              Read more <span aria-hidden="true">&#8594;</span>
           </PostCardAction>
           <PostMetas>
               <PostAuthor>
@@ -137,6 +157,7 @@ export default PostCard;
 PostCard.propTypes = {
     url: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
+    acmLink: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
     category: PropTypes.array.isRequired,
     date: PropTypes.string.isRequired,

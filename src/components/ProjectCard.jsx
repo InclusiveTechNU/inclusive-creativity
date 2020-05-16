@@ -161,12 +161,12 @@ const ProjectCardImageContainer = styled("div")`
             </ProjectCardAction>
 */
 const ProjectCard = ({ category, title, description, thumbnail, uid, color, secondaryColor}) => (
-    <ProjectCardContainer secondaryColor={secondaryColor} to={`/publications`}>
+    <ProjectCardContainer aria-label={ `Project: ${title[0].text}`} secondaryColor={secondaryColor} to={`/publications`}>
         <ProjectCardContent secondaryColor={secondaryColor} className="ProjectCardContent">
-            <ProjectCardCategory>
+            <ProjectCardCategory aria-hidden="true">
                 {category[0].text}
             </ProjectCardCategory>
-            <ProjectCardTitle>
+            <ProjectCardTitle aria-hidden="true">
                 {title[0].text}
             </ProjectCardTitle>
             <ProjectCardBlurb>
