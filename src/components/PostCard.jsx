@@ -12,7 +12,7 @@ const PostCardContainer = styled('a')`
     position: relative;
     text-decoration: none;
     background: white;
-    height: 450px;
+    height: fit-content;
     color: currentColor;
     display: flex;
     flex-direction: column;
@@ -74,7 +74,7 @@ const PostDate = styled("div")`
 
 const PostDescription = styled("div")`
     margin-top: 1.2em;
-    margin-bottom: 1.2em;
+    margin-bottom: 3.2em;
     
     p {
       font-size: .9em;
