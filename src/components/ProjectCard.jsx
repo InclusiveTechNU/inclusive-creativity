@@ -185,7 +185,7 @@ ProjectCard.propTypes = {
     category: PropTypes.array.isRequired,
     thumbnail: PropTypes.object.isRequired,
     title: PropTypes.array.isRequired,
-    description: PropTypes.array.isRequired,
+    description: PropTypes.array,
     resources: PropTypes.array.isRequired,
     uid: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,

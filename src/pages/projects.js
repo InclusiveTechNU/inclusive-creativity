@@ -74,9 +74,14 @@ const Work = ({ projects, meta }) => (
 );
 
 export default ({ data }) => {
-    const projects = data.prismic.allProjects.edges;
+    let projects = data.prismic.allProjects.edges;
     const meta = data.site.siteMetadata;
     if (!projects) return null;
+
+    // Sort projects
+    projects.sort((a, b) => {
+        return a.node.project_category[0].text.localeCompare(b.node.project_category[0].text);
+    })
 
     return (
         <Work projects={projects} meta={meta}/>
