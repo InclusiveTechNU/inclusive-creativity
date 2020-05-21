@@ -6,14 +6,26 @@ import dimensions from "styles/dimensions";
 import colors from "styles/colors";
 import PropTypes from "prop-types";
 
-const ProjectCardContainer = styled("div")`
-    display: grid;
-    grid-template-columns: 4fr 7fr;
+const ProjectCardOuterContainer = styled("div")`
     box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.06);
     margin-bottom: 4em;
     transition: all 150ms ease-in-out;
     text-decoration: none;
     color: currentColor;
+
+    @media(max-width:${dimensions.maxwidthMobile}px) {
+        margin-bottom: 2em;
+    }
+
+    &:hover {
+        box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.1);
+        transition: all 150ms ease-in-out;
+    }
+`;
+
+const ProjectCardContainer = styled("div")`
+    display: grid;
+    grid-template-columns: 4fr 7fr;
 
     @media(max-width:950px) {
         grid-template-columns: 4.5fr 7fr;
@@ -23,14 +35,7 @@ const ProjectCardContainer = styled("div")`
         grid-template-columns: 1fr;
     }
 
-    @media(max-width:${dimensions.maxwidthMobile}px) {
-        margin-bottom: 2em;
-    }
-
     &:hover {
-        box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.1);
-        transition: all 150ms ease-in-out;
-
         .ProjectCardAction {
             color: ${props => props.secondaryColor};
             transition: all 150ms ease-in-out;
@@ -58,19 +63,6 @@ const ProjectCardContent = styled("div")`
     background: white;
     padding: 4em 3em 2.25em 3em;
     position: relative;
-
-    &:before {
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        background: ${props => props.secondaryColor};
-        mix-blend-mode: multiply;
-        opacity: 0;
-        transition: all 150ms ease-in-out;
-    }
 
     @media(max-width:950px) {
         padding: 3.25em 2.5em 2em 2.5em;
@@ -155,28 +147,36 @@ const ProjectCardImageContainer = styled("div")`
     }
 `
 
-/*
-            <ProjectCardAction className="ProjectCardAction">
-                Details <span>&#8594;</span>
-            </ProjectCardAction>
-*/
-const ProjectCard = ({ category, title, description, thumbnail, uid, color, secondaryColor}) => (
-    <ProjectCardContainer aria-label={ `Project: ${title[0].text}`} secondaryColor={secondaryColor} to={`/publications`}>
-        <ProjectCardContent secondaryColor={secondaryColor} className="ProjectCardContent">
-            <ProjectCardCategory aria-hidden="true">
-                {category[0].text}
-            </ProjectCardCategory>
-            <ProjectCardTitle aria-hidden="true">
-                {title[0].text}
-            </ProjectCardTitle>
-            <ProjectCardBlurb>
-                {RichText.render(description)}
-            </ProjectCardBlurb>
-        </ProjectCardContent>
-        <ProjectCardImageContainer aria-hidden="true" secondaryColor={secondaryColor} style={{background: color}} className="ProjectCardImageContainer">
-            <img src={thumbnail.url} alt="" role="presentation"/>
-        </ProjectCardImageContainer>
-    </ProjectCardContainer>
+const ProjectCardResources= styled("div")`
+    text-align: left;
+    background: white;
+    width: 100%;
+    h1 {
+        font-size: 19px;
+    }
+
+`
+
+const ProjectCard = ({ category, title, description, thumbnail, uid, color, secondaryColor, resources}) => (
+    <ProjectCardOuterContainer>
+        <ProjectCardContainer aria-label={ `Project: ${title[0].text}`} secondaryColor={secondaryColor} to={`/publications`}>
+            <ProjectCardContent secondaryColor={secondaryColor} className="ProjectCardContent">
+                <ProjectCardCategory aria-hidden="true">
+                    {category[0].text}
+                </ProjectCardCategory>
+                <ProjectCardTitle aria-hidden="true">
+                    {title[0].text}
+                </ProjectCardTitle>
+                <ProjectCardBlurb>
+                    {RichText.render(description)}
+                </ProjectCardBlurb>
+                <ProjectCardResources>{RichText.render(resources)}</ProjectCardResources>
+            </ProjectCardContent>
+            <ProjectCardImageContainer aria-hidden="true" secondaryColor={secondaryColor} style={{background: color}} className="ProjectCardImageContainer">
+                <img src={thumbnail.url} alt="" role="presentation"/>
+            </ProjectCardImageContainer>
+        </ProjectCardContainer>
+    </ProjectCardOuterContainer>
 )
 
 export default ProjectCard;
@@ -186,6 +186,7 @@ ProjectCard.propTypes = {
     thumbnail: PropTypes.object.isRequired,
     title: PropTypes.array.isRequired,
     description: PropTypes.array.isRequired,
+    resources: PropTypes.array.isRequired,
     uid: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
     secondaryColor: PropTypes.string.isRequired

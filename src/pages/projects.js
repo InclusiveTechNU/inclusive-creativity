@@ -61,6 +61,7 @@ const Work = ({ projects, meta }) => (
                         category={project.node.project_category}
                         title={project.node.project_title}
                         description={project.node.project_preview_description}
+                        resources={project.node.project_description}
                         thumbnail={project.node.project_preview_thumbnail}
                         uid={project.node._meta.uid}
                         color={project.node.primary_color}
@@ -97,6 +98,7 @@ export const query = graphql`
                         project_preview_thumbnail
                         project_category
                         project_post_date
+                        project_description
                         secondary_color
                         primary_color
                         _meta {
